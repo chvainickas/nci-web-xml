@@ -1,0 +1,135 @@
+* {
+	padding:0;
+	margin:0;
+}
+.clear {
+	clear:both;
+}
+.clear:after {
+	display:block;
+	visibility:hidden;
+	clear:both;
+	height:0;
+	content:".";
+}
+html {
+	background:#f0f0f0 url(images/365bgside.png) repeat;
+	width:100%;
+	height:100%;
+}
+body {
+	background:url(images/365bgside.png) repeat;
+	font-family :'DroidSansRegular', Verdana, Geneva, sans-serif;
+	font-size:62.5%;
+	color:#5a5143;
+}
+p {
+	font-family: 'DroidSansRegular', Verdana, Geneva, sans-serif;
+	font-size: 62.5%;
+	color: #5a5143;
+}
+a:visited, a:active {
+	color:#1c5f75;
+}
+#wrap, #nav { 
+	/* This is the CSS Styling of the Navbar. Automatic marging and padding at top to give a break from the top of the page */
+	width:1001px;
+	margin:0 auto;
+	padding-top:20px;
+}
+h1, h2, h3 {
+	font-family:'TeXGyreAdventor', Arial, sans-serif;
+}
+h4, h5 {
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+section{
+	margin-top: 10px;
+}
+nav, section, header, article {
+	display:block;
+}
+
+#bottom {
+	bottom: 0;
+	width: 100%;
+	padding: 30px 0;
+	text-align: center;
+}
+.imageholder {
+	float:left;
+	width:258px;
+}
+.imageholder img {
+	display:block;
+	background:#fff;
+	padding:5px;
+	border:solid 1px #ccc;
+}
+.entry {
+	width:640px;
+	float:right;
+}
+.normalpage #fourcols h3 {
+	color:#d35537!important;
+}
+
+.login{
+	font-size: 20px;
+	color: #d35537;
+}
+#textlogo{
+	font-size: 20px;
+	color: #00008B;
+	transition: font-size 1s, color 1s;
+}
+#textlogo:hover {
+	font-size: 24px;
+	color: #00008B;
+}
+.navbar-light .navbar-nav .nav-link {
+	color: #F15524;
+}
+#nav-item active{
+	color: #F15524 !important;
+}
+.download{
+	color: #F15524;
+}
+a {
+	color: #F15524;
+}
+.website-counter {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+body {
+	height: 100vh;
+}
+
+/* Styles for website counter container */
+.website-counter {
+	font-size: 25px;
+}
+.card-img-top {
+	width: auto;
+	height: auto;
+	object-fit: contain;
+	max-height: 150px;
+	/* added max-height to limit the image height */
+}
+
+@media (max-width: 900px) {
+	.card-img-top {
+		max-height: 100px;
+		max-width: 100px;
+		/* reduce max-height for smaller screens */
+	}
+		#wrap, #nav {
+		width: 100%;
+		
+}}
+/* Styles for reset button */

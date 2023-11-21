@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <title>NCI Merchandise</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <!-- Custom CSS -->
+    <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <!-- START PAGE SOURCE -->
+    <div id="wrap">
+        <nav class="navbar navbar-expand-md navbar-light bg-light">
+            <a class="navbar-brand" href="index.html">
+                <h1 id="textlogo">NCI <span>Merchandise</span> </h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item ">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="product.html">Products</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <section id="content">
+            <p id="code"></p>
+            <p id="category"></p>
+            <p id="description"></p>
+            <p id="quantity"></p>
+            <p id="price"></p>
+            <input type="text" id="searchTerm" placeholder="Enter product code">
+            <button class="Btn" onclick="searchProduct()">Search</button>
+    </div>
+    <script>
+        var xmlDoc;
+
+        if (window.XMLHttpRequest) {
+            xmlhttp = new XMLHttpRequest();
+        } else {
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.open("GET", "ca-products.xml", false);
+        xmlhttp.send();
+        xmlDoc = xmlhttp.responseXML;
+
+        function searchProduct() {
+            var searchTerm = document.getElementById("searchTerm").value;
+            var products = xmlDoc.getElementsByTagName("product");
+            for (var i = 0; i < products.length; i++) {
+                if (products[i].getAttribute("code") === searchTerm) {
+                    document.getElementById("code").innerHTML = "Product Code: " + products[i].getAttribute("code");
+                    document.getElementById("category").innerHTML = "Category: " + products[i].getElementsByTagName("category")[0].childNodes[0].nodeValue;
+                    document.getElementById("description").innerHTML = "Description: " + products[i].getElementsByTagName("description")[0].childNodes[0].nodeValue;
+                    document.getElementById("quantity").innerHTML = "Quantity: " + products[i].getElementsByTagName("quantity")[0].childNodes[0].nodeValue;
+                    document.getElementById("price").innerHTML = "Price: " + products[i].getElementsByTagName("price")[0].childNodes[0].nodeValue;
+                    return;
+                }
+            }
+            alert("Product not found");
+        }
+    </script>
+</body>
+
+</html>
