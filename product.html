@@ -37,6 +37,7 @@
         </nav>
         <section id="content">
             <p id="code"></p>
+            <p id="name"></p>
             <p id="category"></p>
             <p id="description"></p>
             <p id="quantity"></p>
@@ -63,6 +64,7 @@
             for (var i = 0; i < products.length; i++) {
                 if (products[i].getAttribute("code") === searchTerm) {
                     document.getElementById("code").innerHTML = "Product Code: " + products[i].getAttribute("code");
+                    document.getElementById("name").innerHTML = "Name: " + products[i].getElementsByTagName("name")[0].childNodes[0].nodeValue;
                     document.getElementById("category").innerHTML = "Category: " + products[i].getElementsByTagName("category")[0].childNodes[0].nodeValue;
                     document.getElementById("description").innerHTML = "Description: " + products[i].getElementsByTagName("description")[0].childNodes[0].nodeValue;
                     document.getElementById("quantity").innerHTML = "Quantity: " + products[i].getElementsByTagName("quantity")[0].childNodes[0].nodeValue;

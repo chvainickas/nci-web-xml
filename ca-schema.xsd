@@ -7,6 +7,7 @@
                     <xs:complexType>
                         <xs:sequence>
                             <xs:element name="category" type="xs:string" />
+                            <xs:element name="name" type="xs:string" />
                             <xs:element name="description" type="xs:string" />
                             <xs:element name="quantity" type="xs:positiveInteger" />
                             <xs:element name="price">

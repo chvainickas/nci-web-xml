@@ -40,10 +40,12 @@
                             </ul>
                         </div>
                     </nav>
+                    <button onclick="search()">Search</button>
                     <h2>Product List</h2>
                     <table border="1">
                         <tr>
                             <th>Code</th>
+                            <th>Name</th>
                             <th>Category</th>
                             <th>Description</th>
                             <th>Quantity</th>
@@ -63,6 +65,9 @@
         <tr>
             <td>
                 <xsl:value-of select="@code" />
+            </td>
+            <td>
+                <xsl:value-of select="name" />
             </td>
             <td>
                 <xsl:value-of select="category" />
