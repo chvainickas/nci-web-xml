@@ -1,23 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-
-    <!-- Identity template: copies everything as is by default -->
     <xsl:template match="@*|node()">
         <xsl:copy>
             <xsl:apply-templates select="@*|node()" />
         </xsl:copy>
     </xsl:template>
 
-    <!-- Matches the root element to start the transformation -->
     <xsl:template match="products">
         <html>
             <head>
                 <title>NCI Merchandise</title>
                 <meta charset="UTF-8" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <!-- Bootstrap CSS -->
                 <link rel="stylesheet" href="bootstrap.min.css" />
-                <!-- Custom CSS -->
                 <link href="style.css" rel="stylesheet" type="text/css" />
             </head>
             <body>
@@ -56,12 +51,14 @@
                         </tr>
                         <xsl:apply-templates />
                     </table>
+
                 </div>
+                <script>
+                    function search() { location.href = 'product.html'; } </script>
             </body>
         </html>
     </xsl:template>
 
-    <!-- Matches each product element to create a table row -->
     <xsl:template match="product">
         <tr>
             <td>

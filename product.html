@@ -42,7 +42,8 @@
             <p id="quantity"></p>
             <p id="price"></p>
             <input type="text" id="searchTerm" placeholder="Enter product code">
-            <button class="Btn" onclick="searchProduct()">Search</button>
+            <button onclick="searchProduct()">Search</button>
+            <button onclick="allProducts()">All Products</button>
     </div>
     <script>
         var xmlDoc;
@@ -70,6 +71,10 @@
                 }
             }
             alert("Product not found");
+        }
+        function allProducts() {
+            location.href = 'ca-products.xml';
+
         }
     </script>
 </body>
